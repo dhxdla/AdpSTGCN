@@ -1,5 +1,5 @@
 # Introducton
-该程序是Traffic Forecasting的实验框架, 目前内置的默认模型为Graph wavenet(见model/gwnet/gwnet_model)
+该程序是Traffic Forecasting的实验框架。
 
 ### 主要函数介绍
 1. exp.py 
@@ -7,7 +7,7 @@
 
 2. analyse_tools.py
 结果统计函数. 当 exp.py 运行完毕时, 将在路径 "args: root_path + exp_info_path" 中保存实验数据结果class对象, 运行该程序将自动将该对象解析并保存为 Excel 文件. 该文件的 Page 1 为 train, vali, test 三个数据集的所有 Epoch 的 MAE, Page 2 则是对最佳指标的统计.
-![Alt text](image/image1.png)
+
 这些统计数据包含 最佳Train/vali/test的Loss, 最佳 vali loss对应的epoch值,最佳vali loss epoch 对应的 MAE, MAPE, RMSE均值以及12步结果.
 Ps: 目前程序无法同时处理不同 epoch 长度的实验结果文件, 请确认 "path = 'xxx/results/dict/'" 中所有结果文件拥有相同的 epoch.
 
@@ -26,7 +26,6 @@ generate_torch_data_set: csv -> torch dataloader, 将 csv 文件转换为pytoch�
 2. save_log
 (可选) 程序的日志输出类. 当该选项为True时, 将在 "args: root_path + log_path" 中保存本次实验的日志,该日志包含实验开始时间,ID,notes (若有),所有的超参数, 模型结构, 以及全部的输出结果 (即终端打印内容).
 同时, 这些输出是默认加注日期的.
-![Alt text](image/image2.png)
 
 3. save_model
 (可选) 保存每个 epoch 结果到 "args: root_path + saving_path" 中.
